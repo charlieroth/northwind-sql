@@ -1,0 +1,39 @@
+services:
+  database:
+    image: postgres:17.3
+    container_name: database
+    restart: unless-stopped
+    tty: true
+    cpu_count: 2
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=northwind
+    volumes:
+      - northwind_postgres_data:/var/lib/postgresql
+    networks:
+      - northwind-network
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -h localhost -u postgres" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+  migrations:
+    image: ghcr.io/emilpriver/geni:v1.1.5
+    container_name: migrations
+    networks:
+      - northwind-network
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@database/northwind
+    volumes:
+      - ./migrations:/migrations
+    command: up
+
+networks:
+  northwind-network:
+
+volumes:
+  northwind_postgres_data: {}
