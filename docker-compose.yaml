@@ -27,7 +27,7 @@ services:
     networks:
       - northwind-network
     environment:
-      - DATABASE_URL=postgresql://postgres:postgres@database/northwind
+      - DATABASE_URL=postgresql://postgres:postgres@database:5432/northwind
     volumes:
       - ./migrations:/migrations
     command: up
