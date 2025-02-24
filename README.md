@@ -4,11 +4,27 @@
 the Northwind Traders company, which imports and exports specialtiy foods
 from around the world.
 
-## Useful Links
+The Northwind database is a sample database that was originally created by
+Microsoft and used as the basis for their tutorials in a variety of database
+products for decades. The Northwind database contains the sales data for a
+fictitious company called “Northwind Traders,” which imports and exports
+specialty foods from around the world. The Northwind database is an excellent
+tutorial schema for a small-business ERP, with customers, orders, inventory,
+purchasing, suppliers, shipping, employees, and single-entry accounting.
 
-- https://docs.yugabyte.com/preview/sample-data/northwind/
-- https://github.com/yugabyte/yugabyte-db/blob/master/sample/northwind_ddl.sql
-- https://github.com/yugabyte/yugabyte-db/blob/master/sample/northwind_data.sql
+## Project Details
+
+This project includes a Docker Compose file to start a PostgreSQL database
+and run database migrations with the `geni` tool. The project also includes
+example queries that cover the following topics:
+
+- SQL Basic
+- Manipulating Data
+- Mutli-Table Queries
+- Aggregate Functions
+- Scalar Functions
+- Subqueries and Common Table Expressions
+- Window Functions
 
 ## Project Setup
 
