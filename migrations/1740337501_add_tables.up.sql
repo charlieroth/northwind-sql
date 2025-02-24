@@ -28,6 +28,7 @@ CREATE TABLE IF NOT EXISTS employees (
     first_name VARCHAR(10) NOT NULL,
     title VARCHAR(30),
     title_of_courtesy VARCHAR(25),
+    salary NUMERIC,
     birth_date DATE,
     hire_date DATE,
     address VARCHAR(60),

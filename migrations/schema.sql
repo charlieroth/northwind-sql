@@ -59,6 +59,7 @@ CREATE TABLE employees (
  postal_code character varying (10),
  region character varying (15),
  reports_to smallint ,
+ salary numeric ,
  title character varying (30),
  title_of_courtesy character varying (25)
 );
